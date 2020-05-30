@@ -1,4 +1,7 @@
-$(document).ready(()=> {
+$(document).ready(($)=> {
+    $.support.touch = 'ontouchend' in document
+    if($.support.touch)
+        touch($)
     const colors = ["red","yellow","#32CD32"]
     $('.status').each((index,element)=> {
         element.style.backgroundColor = colors[index]
@@ -7,7 +10,6 @@ $(document).ready(()=> {
     $('.btn0').click(()=> {
         const dropZone = $(".dropzone").each((index,element)=>  element)
         $(dropZone[0]).append(`<div class="body-text listCard form" draggable="true"> <div class = "form-group " > <input class="form-control bg-dark title" type="text"> <button class = "btn1 btn btn-outline-warning">Pronto</button> </div> </div>`)
-        const forms = $('.form').each((index,element)=> element)
         $('.btn0').css('display','none')
         $('.btn1').click((e)=> {
             console.log('click')
@@ -81,4 +83,37 @@ $(document).ready(()=> {
     }
     const drop = () => {
         
+    }
+    const touch = (touch)=> {
+        let mouseProto = touch.ui.mouse.prototype,
+        _mouseInit = mouseProto._mouseInit,
+        touchHandled
+        function simulateMouseEvent(event,simulate) {
+            if(event.originalEvent.touches.length > 1)
+                return
+
+            event.preventDefault()
+
+            let touch = event.originalEvent.changedTouches[0],
+            simulatedEvent = document.createEvent('MouseEvents');
+
+            simulatedEvent.initMouseEvent(
+                simulatedType,    // type
+                true,             // bubbles                    
+                true,             // cancelable                 
+                window,           // view                       
+                1,                // detail                     
+                touch.screenX,    // screenX                    
+                touch.screenY,    // screenY                    
+                touch.clientX,    // clientX                    
+                touch.clientY,    // clientY                    
+                false,            // ctrlKey                    
+                false,            // altKey                     
+                false,            // shiftKey                   
+                false,            // metaKey                    
+                0,                // button                     
+                null              // relatedTarget            
+            )
+            
+        }
     }
