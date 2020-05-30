@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+html(lang="pt")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Organizador De tempo
+        link(rel="stylesheet", href="bootstrap/dist/css/bootstrap.css") 
+        link(rel="stylesheet", href="css/index.css")
+        <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap" rel="stylesheet">
+    body
+        .container(class="")
+            .boards
+                each titles in ["Passos a fazer","Fazendo","Terminados"]
+                        .card(class="board")
+                            h3.card-title #{titles} 
+                            .card-body
+                                .status
+                                .dropzone
+                                    
+                                    
+            //-                     e.preventDefault()
+            //- if(index === 0 ){
+            //-     $('.dropzone').append(`
+            //-     <div class="body-text listCard" draggable="true"> teste</div>
+            //-     `)}
+            //- //<div class="body-text listCard" draggable="true"> <div class = "form-group " > <input class="form-control bg-dark title" type="text"> <button class = "btn1 btn btn-outline-warning">Pronto</button> </div> </div>
+            button(class="btn btn-outline-warning btn0") Adicionar card
+
+        script(src="jquery/dist/jquery.js")
+        script(src="bootstrap/dist/js/bootstrap.js")
+        script(src="js/popper.min.js")
+        script(src="js/index.js")
+    

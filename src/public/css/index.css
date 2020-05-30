@@ -1,0 +1,84 @@
+html {
+    font-family: 'Chelsea Market', cursive;
+}
+body{
+    background-color: #130F0D;
+    color: white;
+}
+.board {
+    background-color: #141316 !important;
+    border: 1px solid #FD951F11 !important;
+    margin:10px 16px !important;
+    border-radius: 4px!important;
+}
+.bg-dark{
+    background-color: #3d3d3d79 !important;
+    color:white !important;
+}
+.card-title{
+    padding: 16px;
+    margin:0;
+    color:#FD951fcc
+}
+.dropzone{
+    padding: 16px;
+    min-width: 140px;
+    min-height: 100px;
+}
+.body-text{
+    margin-top: 10px;
+    padding: 16px;
+    width: 100%;
+    box-shadow: 0 2px 2px -1px #FD951Fcc;
+    background-color: #1a1a1c;
+    /* margin: 25px 0; */
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 18px;
+}
+.status {
+    width: 30px;
+    height: 14px;
+    /* background-color: grey; */
+    margin-bottom: 16px;
+    border-radius: 8px;
+}
+.card,.dropzone { 
+    transition: 400ms;
+}
+
+.btn0 {
+    padding-top: 10px;
+    margin-left: 40%;
+    width: 20%;
+    height: 20%;
+    padding-bottom: 10px;
+}
+.btn1{
+    margin-top: 10px !important;
+    left:60%;
+    width: 40% !important;
+    height: 20% !important;
+    margin-left: 30%;
+}
+
+@media screen and (min-width : 1000px) {
+    .boards{
+        display: flex !important;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+    .board{
+        width: 35%;
+    }
+    .dropzone{
+        min-width: 280px;
+        min-height: 200px;
+    }
+    .btn {
+        padding-top: 10px;
+        margin-left: 40%;
+        width: 15%;
+        height: 15%;
+    }
+}
