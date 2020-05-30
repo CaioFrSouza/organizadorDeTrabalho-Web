@@ -1,7 +1,4 @@
-$(document).ready(($)=> {
-    $.support.touch = 'ontouchend' in document
-    if($.support.touch)
-        touch($)
+$(document).ready(()=> {
     const colors = ["red","yellow","#32CD32"]
     $('.status').each((index,element)=> {
         element.style.backgroundColor = colors[index]
@@ -83,37 +80,4 @@ $(document).ready(($)=> {
     }
     const drop = () => {
         
-    }
-    const touch = (touch)=> {
-        let mouseProto = touch.ui.mouse.prototype,
-        _mouseInit = mouseProto._mouseInit,
-        touchHandled
-        function simulateMouseEvent(event,simulate) {
-            if(event.originalEvent.touches.length > 1)
-                return
-
-            event.preventDefault()
-
-            let touch = event.originalEvent.changedTouches[0],
-            simulatedEvent = document.createEvent('MouseEvents');
-
-            simulatedEvent.initMouseEvent(
-                simulatedType,    // type
-                true,             // bubbles                    
-                true,             // cancelable                 
-                window,           // view                       
-                1,                // detail                     
-                touch.screenX,    // screenX                    
-                touch.screenY,    // screenY                    
-                touch.clientX,    // clientX                    
-                touch.clientY,    // clientY                    
-                false,            // ctrlKey                    
-                false,            // altKey                     
-                false,            // shiftKey                   
-                false,            // metaKey                    
-                0,                // button                     
-                null              // relatedTarget            
-            )
-            
-        }
     }
