@@ -14,7 +14,7 @@
     "bootstrap": "^4.5.0",
     "express": "^4.17.1",
     "jquery": "^3.5.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "popper": "^1.0.1",
     "pug": "^3.0.0",
     "socketio": "^1.0.0"
